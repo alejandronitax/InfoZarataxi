@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="dark">#FF222222</color>
+    <color name="light">#FFEEEEEE</color>
+    <color name="redPrincipal">#E73D1C</color>
+    <color name="bluePrincipal">#3D1CE7</color>
+    <color name="greenPrincipal">#1CE73D</color>
+    <color name="yellowSemaforo">#CACA3B</color>
+    <color name="gris_button">#D6D7D7</color>
+    <color name="white">#fff</color>
+</resources>

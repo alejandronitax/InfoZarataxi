@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">InfoZarataxi</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="float_buton">Activar Botón Flotante</string>
+    <string name="street_service">Servicio por Puerta</string>
+    <string name="station_service">Servicio por Emisora</string>
+    <string name="service_ok">Aceptar Carrera</string>
+    <string name="service_cancel">Cancelar Carrera</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="text_nav">ASOCIACIÓN PROVICIAL DE TAXI</string>
+
+    <string name="menu_home">Cambiar Email</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="license">Licencia</string>
+    <string name="mail">Email (opcional)</string>
+    <string name="button_Insert">Aceptar</string>
+    <string name="placeholder1_licencia">3205</string>
+    <string name="insert_privacy_policy">lorem ipsum</string>
+    <string name="placeholder_correo">juan@gmail.com</string>
+    <string name="button1">button1</string>
+    <string name="alert_button_message">aceptar</string>
+    <string name="prueba">prueba</string>
+    <string name="email_title">Cambiar Email</string>
+    <string name="email_message">Al cambiar email, le llegaran toda la información recopilada por usted al nuevo email.</string>
+    <string name="precio_message">Al introducir el precio y al aceptar, se guardara la carrera.</string>
+    <string name="email_warning">Solo puede cambiar el email, si ha terminado la carrera.</string>
+    <string name="erro_location">error localización</string>
+    <string name="location_not_found">No se puede encontrar las cordenadas</string>
+    <string name="not_permission">habilite los permisos para continuar</string>
+    <string name="off_conexion">no tiene conexion de internet</string>
+    <string name="message_email">Al cambiar email, le llegaran toda la información recopilada por usted al nuevo email.</string>
+    <string name="tittle_email">Cambiar Email</string>
+
+</resources>
