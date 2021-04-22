@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.google.android.material.navigation.NavigationView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -39,8 +41,6 @@ import com.google.android.material.snackbar.Snackbar;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
-
-import pl.droidsonroids.gif.GifImageView;
 
 import static com.example.infozarataxi.MyAsyncTask.hideProgress;
 
@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements
     private boolean respuesta;
     private View parentLayout;
 
+    @SuppressLint("CommitPrefEdits")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onResume() {
         super.onResume();
@@ -179,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements
                             break;
 
                     }
+
                 }
 
             }
@@ -226,8 +229,7 @@ public class MainActivity extends AppCompatActivity implements
     private void getLocation(final int loca) {
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-
+            Toast.makeText(context, "Le falta aceptar algún permiso", Toast.LENGTH_SHORT).show();
         } else {
             fusedLocationClient.getLastLocation()
                     .addOnSuccessListener(new OnSuccessListener<Location>() {
@@ -297,7 +299,7 @@ public class MainActivity extends AppCompatActivity implements
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
+                Toast.makeText(context, R.string.permission_success, Toast.LENGTH_SHORT).show();
             } else {
                 //Si deniega los permisos.
                 Snackbar.make(parentLayout, R.string.not_permission, Snackbar.LENGTH_SHORT).show();
@@ -468,8 +470,8 @@ public class MainActivity extends AppCompatActivity implements
             trip.guardarTrip(context, trip);
 
             trip.enviarTrips(context);
-
-            editor.putInt("idCarrera", idCarreraInterna += 1);
+            idCarreraInterna += 1;
+            editor.putInt("idCarrera", idCarreraInterna );
 
         }
 
@@ -483,11 +485,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private String[] getArrayDateLatLong(String string) {
-
-        String[] parts = string.split("#");
-
-        return parts;
-
+        return string.split("#");
     }
 
     private void lanzarDialogoTipoServicio(String tipoDialogo) {
@@ -652,9 +650,7 @@ public class MainActivity extends AppCompatActivity implements
         String mensaje;
 
         if(validado){
-
-
-            new VolleyApi().peticionAlServidor(context, Constants.urlAlta, null, null, Constants.licenseValue, email);
+            VolleyApi.peticionAlServidor(context, Constants.urlAlta, null, null, Constants.licenseValue, email);
             mensaje = "Email actualizado correctamente";
 
         } else {

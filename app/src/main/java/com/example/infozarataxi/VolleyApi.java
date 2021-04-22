@@ -3,6 +3,7 @@ package com.example.infozarataxi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -70,10 +71,9 @@ public class VolleyApi {
                                 .setXmlParserCreator(parserCreator)
                                 .create();
 
-                        String xml = response;
                         if (url.compareTo(Constants.urlAlta) == 0) {
 
-                            RespuestaAlta ra = gsonXml.fromXml(xml, RespuestaAlta.class);
+                            RespuestaAlta ra = gsonXml.fromXml(response, RespuestaAlta.class);
 
                             if (ra.Correcto) {
                                 tarea1.cancel(true);
@@ -85,12 +85,12 @@ public class VolleyApi {
                                     editor.putString("licencia", licencia);
                                     editor.putInt("idCarrera", 1);
 
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     context.startActivity(intent);
 
                                 }
 
-                                editor.commit();
+                                editor.apply();
                                 Toast.makeText(context, "Registro Correcto", Toast.LENGTH_SHORT).show();
 
                             }
@@ -98,12 +98,12 @@ public class VolleyApi {
 
                         if (url.compareTo(Constants.urlRegistro) == 0) {
 
-                            RespuestaRegistro rr = gsonXml.fromXml(xml, RespuestaRegistro.class);
+                            RespuestaRegistro rr = gsonXml.fromXml(response, RespuestaRegistro.class);
 
                             //Recuperar Trips
                             Trip trip = new Trip();
                             ArrayList<Trip> Trips = trip.recuperarTrips(context);
-                            ArrayList<Trip> TripsFinal = new ArrayList();
+                            ArrayList TripsFinal = new ArrayList();
 
                             //Comprobar respuesta
                             if (rr != null) {

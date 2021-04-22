@@ -28,7 +28,7 @@
     <string name="prueba">prueba</string>
     <string name="email_title">Cambiar Email</string>
     <string name="email_message">Al cambiar email, le llegaran toda la información recopilada por usted al nuevo email.</string>
-    <string name="precio_message">Al introducir el precio y al aceptar, se guardara la carrera.</string>
+    <string name="precio_message">Al introducir el precio y presionar el botón aceptar, se guardará la carrera. Si presiona el botón cancelar, se anulará la carrera.</string>
     <string name="email_warning">Solo puede cambiar el email, si ha terminado la carrera.</string>
     <string name="erro_location">error localización</string>
     <string name="location_not_found">No se puede encontrar las cordenadas</string>
@@ -36,5 +36,8 @@
     <string name="off_conexion">no tiene conexion de internet</string>
     <string name="message_email">Al cambiar email, le llegaran toda la información recopilada por usted al nuevo email.</string>
     <string name="tittle_email">Cambiar Email</string>
+    <string name="title_price_dialog">Precio SIN SUPLEMENTOS</string>
+    <string name="text_trip_price">Introduce el precio de la carrera sin suplementos</string>
+    <string name="permission_success">los permisos han sido aceptados correctamente</string>
 
 </resources>
